@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>사용자 정보 - 푸드샵인샵 모바일</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/userInfo.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    
+    <script src="../js/user/jquery-1.10.2.js"></script>
+    <script src="../js/user/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="../js/user/jquery.form.js"></script>
+    <script src="../js/user/jquery.class.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/formdata.js"></script>
+
+    <script>
+        function Link(jsp, query, param, otherParams) {
+            console.log('Navigation to:', jsp);
+            const pageMap = {
+                "frnOwner/storepayM/user/Main": "../index.html",
+                "frnOwner/storepayM/user/userAcc": "userAcc.html",
+                "frnOwner/storepayM/user/userPayService": "userPayService.html",
+                "frnOwner/storepayM/user/userPay": "userPay.html",
+                "frnOwner/storepayM/user/ServiceInfo": "ServiceInfo.html",
+                "frnOwner/storepayM/user/SupportFund": "SupportFund.html",
+                "frnOwner/storepayM/user/Notice": "Notice.html"
+            };
+            
+            if (pageMap[jsp]) {
+                window.location.href = pageMap[jsp];
+            } else {
+                alert('페이지 준비 중입니다: ' + jsp);
+            }
+        }
+
+        function init() {
+            console.log('initFunction');
+            setData();
+            initEvent();
+        }
+
+        function setData() {
+            // 초기 데이터 Setting
+        }
+
+        function initEvent() {
+            // Event Handling
+        }
+
+        // 비밀번호 변경 모달
+        function savePassword() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                alert('모든 필드를 입력해주세요.');
+                return;
+            }
+
+            if (newPassword !== confirmPassword) {
+                alert('새 비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            if (newPassword.length < 8) {
+                alert('비밀번호는 8자리 이상이어야 합니다.');
+                return;
+            }
+
+            // 실제 구현에서는 서버로 비밀번호 변경 요청
+            alert('비밀번호가 변경되었습니다.');
+            document.getElementById('passwordModal').style.display = 'none';
+        }
+
+        // 카카오톡 상담
+        function openKakaoConsult() {
+            alert('카카오톡 상담 창이 열립니다.');
+            // 실제 구현에서는 카카오톡 연결
+        }
+
+        // 서비스 문의
+        function callService() {
+            if (confirm('1600-8417로 전화를 걸까요?')) {
+                window.location.href = 'tel:1600-8417';
+            }
+        }
+    </script>
+</head>
+<body class="bg" onload="init();">
+    <!-- Header -->
+    <div id="header" class="sub fixed-header">
+        <div class="header_wrap">
+            <div class="header-left">
+                <a href="../index.html" class="icon xl back">뒤로가기</a>
+                <h1>사용자 정보</h1>
+            </div>
+            <div class="header-right">
+                <div class="user_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userInfo")'>
+                        <p class="user_icon"></p>
+                    </a>
+                </div>
+                <div class="notify_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_off_icon"></p></a>
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_icon"></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">    
+        <div class="userInfo">
+            <!-- 로그인 정보 -->
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>로그인정보</h3>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="user_details">
+                    <div class="name_box">
+                        <p>사용자 이름</p> <span>홍길동</span>
+                    </div>
+                    <div class="id_box">
+                        <div class="id_wrap">
+                            <p>로그인 ID</p><span>storepay001</span>
+                        </div>
+                        <button class="btn_change_password">비밀번호 변경</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사업장 정보 -->
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>사업장 정보</h3>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="user_details">
+                    <div class="place_box">
+                        <p>사업장 명</p> <span>소금꽃 (C005455521)</span>
+                    </div>
+                    <div class="business_Numb_box">
+                        <p>사업자 번호</p> <span>123-45-67890</span>
+                    </div>
+                    <div class="address_box">
+                        <p>주소</p> <span>서울 송파구 새말로 123 33 1층 1호</span>
+                    </div>
+                    <div class="represent_box">
+                        <p>대표자 명</p> <span>홍길동</span>
+                    </div>
+                    <div class="represent_numb_box">
+                        <p>대표 연락처</p> <span>010-1234-5678</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 서비스 정보 -->
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>서비스 정보</h3>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="user_details">
+                    <!-- 서비스 버튼 -->
+                    <div class="service_buttons">
+                        <button class="btn_service" onclick='Link("frnOwner/storepayM/user/userAcc")'>선정산 서비스</button>
+                        <button class="btn_service" onclick='Link("frnOwner/storepayM/user/userPayService")'>결제 서비스</button>
+                    </div>
+
+                    <!-- 설명 글 -->
+                    <div class="service_description">
+                        <p>서비스 가입이 궁금하세요?<br>언제라도 편하게 문의주세요.</p>
+                    </div>
+
+                    <!-- 상담 정보 -->
+                    <div class="service_contact">
+                        <p><strong>선정산 / 서비스 문의 </strong>: 1600-8417</p>
+                        <button class="btn_call" onclick="callService()">전화상담</button>
+                        <button class="btn_kakao" onclick="openKakaoConsult()">카톡 상담</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 비밀번호 변경 모달 -->
+    <div id="passwordModal" class="modal">
+        <div class="modal_content">
+            <div class="modal_top">
+                <h2>비밀번호 변경</h2>
+                <span class="close_button">&times;</span>
+            </div>
+            <div class="modal_bot">
+                <div class="modal_bot_cont">
+                    <div class="form_group">
+                        <label for="currentPassword">현재 비밀번호</label>
+                        <input type="password" id="currentPassword" placeholder="현재 비밀번호를 입력하세요" />
+                    </div>
+                    <div class="form_group">
+                        <label for="newPassword">새 비밀번호</label>
+                        <input type="password" id="newPassword" placeholder="새 비밀번호를 입력하세요" />
+                    </div>
+                    <div class="form_group">
+                        <label for="confirmPassword">새 비밀번호 확인</label>
+                        <input type="password" id="confirmPassword" placeholder="새 비밀번호를 다시 입력하세요" />
+                    </div>
+                    <button class="btn_save_password" onclick="savePassword()">비밀번호 변경</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="nav" class="fixed-nav nav">
+        <div class="nav_wrap">
+            <ul class="menu">
+                <li class="menu1">
+                    <a href="../index.html">
+                        <div class="img_wrap">
+                            <img class="img_gray" src="../images/common/menu_icon1.png" alt="홈" style="width:30px;">
+                        </div>
+                        <span>홈</span>
+                    </a>
+                </li>
+                <li class="menu2">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userAcc")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_1_img.png" alt="선정산 서비스" style="width:30px;">
+                        </div>
+                        <span>선정산</span>
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPayService")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_3_img.png" alt="월세 결제" style="width:30px;">
+                        </div>
+                        <span>월세/결제</span>
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPay")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_4_img.png" alt="배달비 충전" style="width:30px;">
+                        </div>
+                        <span>배달비충전</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 비밀번호 변경 모달 이벤트
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('passwordModal');
+            const changePasswordBtn = document.querySelector('.btn_change_password');
+            const closeBtn = document.querySelector('.close_button');
+
+            // 비밀번호 변경 버튼 클릭
+            changePasswordBtn.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+
+            // 모달 닫기 버튼 클릭
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // 모달 외부 클릭 시 닫기
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // 모바일 터치 효과
+        document.querySelectorAll(".menu li").forEach(function (item) {
+            item.addEventListener("touchstart", function () {
+                this.querySelector("a").classList.add("active");
+            });
+
+            item.addEventListener("touchend", function () {
+                setTimeout(() => {
+                    this.querySelector("a").classList.remove("active");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

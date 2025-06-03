@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>운영지원금 - 푸드샵인샵 모바일</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/SupportFund.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    
+    <script src="../js/user/jquery-1.10.2.js"></script>
+    <script src="../js/user/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="../js/user/jquery.form.js"></script>
+    <script src="../js/user/jquery.class.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/formdata.js"></script>
+
+    <script>
+        function Link(jsp, query, param, otherParams) {
+            console.log('Navigation to:', jsp);
+            const pageMap = {
+                "frnOwner/storepayM/user/Main": "../index.html",
+                "frnOwner/storepayM/user/userAcc": "userAcc.html",
+                "frnOwner/storepayM/user/userPayService": "userPayService.html",
+                "frnOwner/storepayM/user/userPay": "userPay.html",
+                "frnOwner/storepayM/user/ServiceInfo": "ServiceInfo.html",
+                "frnOwner/storepayM/user/userInfo": "userInfo.html",
+                "frnOwner/storepayM/user/Notice": "Notice.html"
+            };
+            
+            if (pageMap[jsp]) {
+                window.location.href = pageMap[jsp];
+            } else {
+                alert('페이지 준비 중입니다: ' + jsp);
+            }
+        }
+
+        function init() {
+            console.log('initFunction');
+            setData();
+            initEvent();
+        }
+
+        function setData() {
+            // 초기 데이터 Setting
+        }
+
+        function initEvent() {
+            // Event Handling
+        }
+
+        // 상담 신청
+        function applyConsult() {
+            if (confirm('상담 신청을 하시겠습니까?')) {
+                alert('상담 신청이 완료되었습니다. 곧 연락드리겠습니다.');
+            }
+        }
+
+        // 전화 상담
+        function callService() {
+            if (confirm('1600-8417로 전화를 걸까요?')) {
+                window.location.href = 'tel:1600-8417';
+            }
+        }
+
+        // 카카오톡 상담
+        function openKakaoConsult() {
+            alert('카카오톡 상담 창이 열립니다.');
+        }
+    </script>
+</head>
+<body class="bg" onload="init();">
+    <!-- Header -->
+    <div id="header" class="sub fixed-header">
+        <div class="header_wrap">
+            <div class="header-left">
+                <a href="../index.html" class="icon xl back">뒤로가기</a>
+                <h1>운영지원금</h1>
+            </div>
+            <div class="header-right">
+                <div class="user_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userInfo")'>
+                        <p class="user_icon"></p>
+                    </a>
+                </div>
+                <div class="notify_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_off_icon"></p></a>
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_icon"></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">    
+        <div class="SupportFund">
+            <div class="tab_content">
+                <div id="tab1" class="content active">
+                    <div class="tab1_content1">
+                        <span class="blue">카드,배달앱 매출</span>
+                        <h2>가맹점 운영지원금 대여</h2>
+                        <img src="../images/common/SupportFund_img1.png" alt="가맹점 운영지원금 대여" style="width:170px;">
+                        <p>선정산 서비스를 이용하시는 가맹점에 한해<br>
+                            1일 매출액의 3~5배 운영자금 지원
+                        </p>
+                    </div>
+                    <div class="tab1_content2">
+                        <h2>운영지원금 진행절차</h2>
+                        <ul class="tab1_content2_list">
+                            <li>
+                                <p>1</p><span>선정산 서비스 신청하기</span>
+                            </li>
+                            <li>
+                                <p>2</p><span>담당자 상담 및 실사 확인</span>            
+                            </li>
+                            <li>
+                                <p>3</p><span>우리은행 or 경남은행 통장 개설 후<br>
+                                    <strong>배민,쿠팡잇츠,요기요, VAN사 매출 입금통장 변경</strong>
+                                </span>                       
+                            </li>
+                            <li>
+                                <p>4</p><span>우리은행 or 경남은행 입금 확인 후
+                                </span>                       
+                            </li>
+                            <li>
+                                <p>5</p><span>운영지원금 지급<br>
+                                <strong>1일 평균 매출의 3~5배 / 1일 차감 방식</strong>
+                                </span>                       
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab1_content3">
+                        <h2>운영지원금 문의</h2>
+                        <div class="support_details">
+                            <p class="team_leader">가맹점 계약 / 대리점 계약 / 업무제휴</p>
+                            <p class="contact_info">
+                                상담신청: <strong>1600-8417</strong>
+                            </p>
+                            <div class="contact_buttons">
+                                <button class="btn_apply" onclick="applyConsult()">상담 신청</button>
+                                <button class="btn_call" onclick="callService()">전화 상담</button>
+                                <button class="btn_kakao" onclick="openKakaoConsult()">카톡 상담</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 추가 혜택 안내 -->
+                    <div class="tab1_content4">
+                        <h2>운영지원금 혜택</h2>
+                        <div class="benefit_list">
+                            <div class="benefit_item">
+                                <div class="benefit_icon">💰</div>
+                                <div class="benefit_text">
+                                    <h3>대출기록 NO</h3>
+                                    <p>신용정보원 대출기록 없음</p>
+                                </div>
+                            </div>
+                            <div class="benefit_item">
+                                <div class="benefit_icon">📋</div>
+                                <div class="benefit_text">
+                                    <h3>서류심사 NO</h3>
+                                    <p>복잡한 서류 없이 간편 진행</p>
+                                </div>
+                            </div>
+                            <div class="benefit_item">
+                                <div class="benefit_icon">📈</div>
+                                <div class="benefit_text">
+                                    <h3>신용점수 하락 NO</h3>
+                                    <p>신용점수에 영향 없음</p>
+                                </div>
+                            </div>
+                            <div class="benefit_item">
+                                <div class="benefit_icon">⚡</div>
+                                <div class="benefit_text">
+                                    <h3>빠른 지급</h3>
+                                    <p>승인 후 즉시 지급</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 이용 조건 -->
+                    <div class="tab1_content5">
+                        <h2>이용 조건</h2>
+                        <div class="condition_list">
+                            <ul>
+                                <li><strong>대상:</strong> 선정산 서비스 이용 가맹점</li>
+                                <li><strong>지원 금액:</strong> 1일 평균 매출의 3~5배</li>
+                                <li><strong>상환 방식:</strong> 1일 차감 방식</li>
+                                <li><strong>필요 서류:</strong> 사업자등록증, 임대차계약서</li>
+                                <li><strong>처리 기간:</strong> 신청 후 2~3영업일</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <!-- Navigation -->
+    <div id="nav" class="fixed-nav nav">
+        <div class="nav_wrap">
+            <ul class="menu">
+                <li class="menu1">
+                    <a href="../index.html">
+                        <div class="img_wrap">
+                            <img class="img_gray" src="../images/common/menu_icon1.png" alt="홈" style="width:30px;">
+                        </div>
+                        <span>홈</span>
+                    </a>
+                </li>
+                <li class="menu2">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userAcc")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_1_img.png" alt="선정산 서비스" style="width:30px;">
+                        </div>
+                        <span>선정산</span>
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPayService")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_3_img.png" alt="월세 결제" style="width:30px;">
+                        </div>
+                        <span>월세/결제</span>
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPay")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_4_img.png" alt="배달비 충전" style="width:30px;">
+                        </div>
+                        <span>배달비충전</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 모바일 터치 효과
+        document.querySelectorAll(".menu li").forEach(function (item) {
+            item.addEventListener("touchstart", function () {
+                this.querySelector("a").classList.add("active");
+            });
+
+            item.addEventListener("touchend", function () {
+                setTimeout(() => {
+                    this.querySelector("a").classList.remove("active");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

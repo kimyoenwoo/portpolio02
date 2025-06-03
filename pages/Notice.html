@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>알림 - 푸드샵인샵 모바일</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/Notice.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    
+    <script src="../js/user/jquery-1.10.2.js"></script>
+    <script src="../js/user/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="../js/user/jquery.form.js"></script>
+    <script src="../js/user/jquery.class.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/formdata.js"></script>
+
+    <script>
+        function Link(jsp, query, param, otherParams) {
+            console.log('Navigation to:', jsp);
+            const pageMap = {
+                "frnOwner/storepayM/user/Main": "../index.html",
+                "frnOwner/storepayM/user/userAcc": "userAcc.html",
+                "frnOwner/storepayM/user/userPayService": "userPayService.html",
+                "frnOwner/storepayM/user/userPay": "userPay.html",
+                "frnOwner/storepayM/user/ServiceInfo": "ServiceInfo.html",
+                "frnOwner/storepayM/user/SupportFund": "SupportFund.html",
+                "frnOwner/storepayM/user/userInfo": "userInfo.html"
+            };
+            
+            if (pageMap[jsp]) {
+                window.location.href = pageMap[jsp];
+            } else {
+                alert('페이지 준비 중입니다: ' + jsp);
+            }
+        }
+
+        function init() {
+            console.log('initFunction');
+            setData();
+            initEvent();
+        }
+
+        function setData() {
+            // 초기 데이터 Setting
+        }
+
+        function initEvent() {
+            // Event Handling
+        }
+
+        // 공지사항 토글
+        document.addEventListener("DOMContentLoaded", function() {
+            const noticeItems = document.querySelectorAll(".notice_item");
+
+            noticeItems.forEach((item) => {
+                const header = item.querySelector(".notice_header");
+                const content = item.querySelector(".notice_content");
+
+                header.addEventListener("click", function() {
+                    // 다른 공지사항을 모두 닫음
+                    noticeItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector(".notice_content").style.display = "none";
+                        }
+                    });
+                    // 클릭한 항목의 내용만 토글
+                    content.style.display = content.style.display === "block" ? "none" : "block";
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg" onload="init();">
+    <!-- Header -->
+    <div id="header" class="sub fixed-header">
+        <div class="header_wrap">
+            <div class="header-left">
+                <a href="../index.html" class="icon xl back">뒤로가기</a>
+                <h1>알림</h1>
+            </div>
+            <div class="header-right">
+                <div class="user_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userInfo")'>
+                        <p class="user_icon"></p>
+                    </a>
+                </div>
+                <div class="notify_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_off_icon"></p></a>
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_icon"></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">
+        <div class="Notice">
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>알림</h3>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="notice_item">
+                    <div class="notice_header">
+                        <span class="notice_title">서비스 점검 완료 안내</span>
+                        <div class="notice_ect">
+                            <span class="notice_date">2024-11-28</span>
+                            <span class="notice_author">관리자</span>
+                        </div>
+                        <p class="notice_circle"></p>
+                    </div>
+                    <div class="notice_content">
+                        <p>안녕하세요. 푸드샵인샵입니다.</p>
+                        <p>11월 28일 새벽 시간대에 실시한 서비스 점검이 정상적으로 완료되었습니다.</p>
+                        <p>점검 중 일시적으로 서비스 이용에 불편을 드린 점 양해 부탁드립니다.</p>
+                        <p>더욱 안정적인 서비스 제공을 위해 최선을 다하겠습니다.</p>
+                        <p>감사합니다.</p>
+                    </div>
+                </div>
+                <div class="notice_item">
+                    <div class="notice_header">
+                        <span class="notice_title">개인정보 처리방침 개정 안내</span>
+                        <div class="notice_ect">
+                            <span class="notice_date">2024-11-20</span>
+                            <span class="notice_author">관리자</span>
+                        </div>
+                        <p class="notice_circle"></p>
+                    </div>
+                    <div class="notice_content">
+                        <p>개인정보 처리방침이 다음과 같이 개정되어 안내드립니다.</p>
+                        <p><strong>시행일자:</strong> 2024년 12월 1일</p>
+                        <p><strong>주요 변경사항:</strong></p>
+                        <ul>
+                            <li>개인정보 수집 및 이용목적 명확화</li>
+                            <li>개인정보 보유기간 조정</li>
+                            <li>개인정보 처리 위탁업체 현행화</li>
+                        </ul>
+                        <p>자세한 내용은 개인정보 처리방침을 확인해 주시기 바랍니다.</p>
+                    </div>
+                </div>
+                <div class="notice_item">
+                    <div class="notice_header">
+                        <span class="notice_title">신규 카드사 추가 안내</span>
+                        <div class="notice_ect">
+                            <span class="notice_date">2024-11-15</span>
+                            <span class="notice_author">관리자</span>
+                        </div>
+                        <p class="notice_circle" style="display:block;"></p>
+                    </div>
+                    <div class="notice_content">
+                        <p>새로운 카드사가 추가되어 안내드립니다.</p>
+                        <p><strong>추가 카드사:</strong> 케이뱅크카드</p>
+                        <p><strong>이용 가능 서비스:</strong></p>
+                        <ul>
+                            <li>월세/거래처 결제</li>
+                            <li>배달비 충전</li>
+                            <li>선정산 서비스</li>
+                        </ul>
+                        <p>더욱 편리한 서비스 이용이 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="notice_item">
+                    <div class="notice_header">
+                        <span class="notice_title">상담시간 변경 안내</span>
+                        <div class="notice_ect">
+                            <span class="notice_date">2024-11-10</span>
+                            <span class="notice_author">관리자</span>
+                        </div>
+                        <p class="notice_circle"></p>
+                    </div>
+                    <div class="notice_content">
+                        <p>고객상담 운영시간이 변경되어 안내드립니다.</p>
+                        <p><strong>기존:</strong> 평일 09:00 ~ 18:00</p>
+                        <p><strong>변경:</strong> 평일 09:00 ~ 19:00</p>
+                        <p><strong>변경일:</strong> 2024년 11월 15일부터</p>
+                        <p>더욱 편리한 상담 서비스를 제공하기 위해 운영시간을 연장하였습니다.</p>
+                    </div>
+                </div>
+                <div class="notice_item">
+                    <div class="notice_header">
+                        <span class="notice_title">추석 연휴 서비스 이용 안내</span>
+                        <div class="notice_ect">
+                            <span class="notice_date">2024-09-15</span>
+                            <span class="notice_author">관리자</span>
+                        </div>
+                        <p class="notice_circle"></p>
+                    </div>
+                    <div class="notice_content">
+                        <p>추석 연휴 기간 중 서비스 이용 안내드립니다.</p>
+                        <p><strong>연휴 기간:</strong> 9월 16일(토) ~ 9월 18일(월)</p>
+                        <p><strong>서비스 운영:</strong></p>
+                        <ul>
+                            <li>모바일 서비스: 정상 운영</li>
+                            <li>고객상담: 휴무</li>
+                            <li>정산 서비스: 9월 19일(화)부터 순차 처리</li>
+                        </ul>
+                        <p>연휴 기간 중 이용에 참고 부탁드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="nav" class="fixed-nav nav">
+        <div class="nav_wrap">
+            <ul class="menu">
+                <li class="menu1">
+                    <a href="../index.html">
+                        <div class="img_wrap">
+                            <img class="img_gray" src="../images/common/menu_icon1.png" alt="홈" style="width:30px;">
+                        </div>
+                        <span>홈</span>
+                    </a>
+                </li>
+                <li class="menu2">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userAcc")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_1_img.png" alt="선정산 서비스" style="width:30px;">
+                        </div>
+                        <span>선정산</span>
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPayService")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_3_img.png" alt="월세 결제" style="width:30px;">
+                        </div>
+                        <span>월세/결제</span>
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPay")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_4_img.png" alt="배달비 충전" style="width:30px;">
+                        </div>
+                        <span>배달비충전</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 모바일 터치 효과
+        document.querySelectorAll(".menu li").forEach(function (item) {
+            item.addEventListener("touchstart", function () {
+                this.querySelector("a").classList.add("active");
+            });
+
+            item.addEventListener("touchend", function () {
+                setTimeout(() => {
+                    this.querySelector("a").classList.remove("active");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>월세/거래처 결제 - 푸드샵인샵 모바일</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/userPayService.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <script src="../js/user/jquery-1.10.2.js"></script>
+    <script src="../js/user/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="../js/user/jquery.form.js"></script>
+    <script src="../js/user/jquery.class.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/formdata.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script>
+        function Link(jsp, query, param, otherParams) {
+            console.log('Navigation to:', jsp);
+            const pageMap = {
+                "frnOwner/storepayM/user/Main": "../index.html",
+                "frnOwner/storepayM/user/userAcc": "userAcc.html",
+                "frnOwner/storepayM/user/userPay": "userPay.html",
+                "frnOwner/storepayM/user/userInfo": "userInfo.html",
+                "frnOwner/storepayM/user/Notice": "Notice.html"
+            };
+            
+            if (pageMap[jsp]) {
+                window.location.href = pageMap[jsp];
+            } else {
+                alert('페이지 준비 중입니다: ' + jsp);
+            }
+        }
+
+        function init() {
+            console.log('initFunction');
+            setData();
+            initEvent();
+        }
+
+        function setData() {
+            // 초기 데이터 Setting
+        }
+
+        function initEvent() {
+            // Event Handling
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 첫 번째 스와이퍼 (입금받는분)
+            var mySwiper = new Swiper('.swiper-container_1', {
+                pagination: {
+                    el: '.swiper-pagination-1',
+                    clickable: true,
+                },
+                loop: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+            });
+
+            // 두 번째 스와이퍼 (내 카드)
+            var mySwiper2 = new Swiper('.swiper-container_2', {
+                pagination: {
+                    el: '.swiper-pagination-2',
+                    clickable: true,
+                },
+                loop: false,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+            });
+
+            // 상세 정보 토글
+            const detailWraps = document.querySelectorAll(".detail_infor_wrap");
+            
+            detailWraps.forEach((wrap) => {
+                const detailTop = wrap.querySelector(".detail_infor_top");
+                const detailBot = wrap.querySelector(".detail_infor_bot");
+                
+                detailTop.addEventListener("click", function() {
+                    if (detailBot.style.display === "block") {
+                        detailBot.style.display = "none";
+                    } else {
+                        detailBot.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg" onload="init();">
+    <!-- Header -->
+    <div id="header" class="sub fixed-header">
+        <div class="header_wrap">
+            <div class="header-left">
+                <a href="../index.html" class="icon xl back">뒤로가기</a>
+                <h1>월세/거래처 결제</h1>
+            </div>
+            <div class="header-right">
+                <div class="user_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userInfo")'>
+                        <p class="user_icon"></p>
+                    </a>
+                </div>
+                <div class="notify_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_off_icon"></p></a>
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_icon"></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">    
+        <div class="payMent">
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>입금 받는분</h3>
+                </div>
+                <div class="detail_top_txt">
+                    <span>입금 받는분을 선택해 주세요.</span>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="swiper-container swiper-container_1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="payment_wrap">
+                                <div class="payment_title">
+                                    <h2>우리동네 배달맨</h2>
+                                </div>
+                                <div class="payment_contents">
+                                    <div class="payment_img">
+                                        <img src="../images/common/payment_delivery_img.svg" alt="배달 기본이미지">
+                                    </div>
+                                    <div class="payment_right">
+                                        <span class="payment_bank">신한은행</span>
+                                        <span class="payment_acc">11123-12-11234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment_wrap">
+                                <div class="payment_title">
+                                    <h2>임대료 관리사무소</h2>
+                                </div>
+                                <div class="payment_contents">
+                                    <div class="payment_img">
+                                        <img src="../images/common/payment_rent_img.svg" alt="월세 기본이미지">
+                                    </div>
+                                    <div class="payment_right">
+                                        <span class="payment_bank">국민은행</span>
+                                        <span class="payment_acc">123456-78-901234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment_wrap">
+                                <div class="payment_title">
+                                    <h2>물품 납품업체</h2>
+                                </div>
+                                <div class="payment_contents">
+                                    <div class="payment_img">
+                                        <img src="../images/common/payment_product_img.svg" alt="물품 기본이미지">
+                                    </div>
+                                    <div class="payment_right">
+                                        <span class="payment_bank">우리은행</span>
+                                        <span class="payment_acc">1002-987-654321</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="payment_wrap">
+                                <div class="payment_title">
+                                    <h2>일반 거래처</h2>
+                                </div>
+                                <div class="payment_contents">
+                                    <div class="payment_img">
+                                        <img src="../images/common/payment_basic_img.svg" alt="기본이미지" style="width:50px;">
+                                    </div>
+                                    <div class="payment_right">
+                                        <span class="payment_bank">하나은행</span>
+                                        <span class="payment_acc">123-456789-01234</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-1"></div>
+                </div>               
+            </div>
+        </div>
+
+        <div class="MyCard">
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>내 카드</h3>
+                </div>
+                <div class="detail_top_txt">
+                    <span>결제할 카드를 선택해 주세요.</span>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="swiper-container swiper-container_2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card_img_wrap">
+                                <div class="card_top">
+                                    <h2 class="card_type">배달전용 카드</h2>
+                                </div>
+                                <div class="card_bot">
+                                    <p class="bank_name">신한</p>
+                                    <span class="card_numb">1234 - 5678 - 1234 - 5678</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card_img_wrap">
+                                <div class="card_top">
+                                    <h2 class="card_type">배달전용 카드</h2>
+                                </div>
+                                <div class="card_bot">
+                                    <p class="bank_name">국민</p>
+                                    <span class="card_numb">1234 - 5678 - 1234 - 9012</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-2"></div>
+                </div>
+                <div class="card_add_btn">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userCard")'>
+                        <p class="card_add_circle">
+                            <span>+</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="detail_button">
+                <p class="cardPay_btn"><a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPay")'>결제하기</a></p>
+                <p class="interest_btn"><a href="#" id="openPopup">카드 무이자 정보</a></p>
+            </div>
+        </div>
+
+        
+
+    <!-- Navigation -->
+    <div id="nav" class="fixed-nav nav">
+        <div class="nav_wrap">
+            <ul class="menu">
+                <li class="menu1">
+                    <a href="../index.html">
+                        <div class="img_wrap">
+                            <img class="img_gray" src="../images/common/menu_icon1.png" alt="홈" style="width:30px;">
+                        </div>
+                        <span>홈</span>
+                    </a>
+                </li>
+                <li class="menu2">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userAcc")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_1_img.png" alt="선정산 서비스" style="width:30px;">
+                        </div>
+                        <span>선정산</span>
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a href="userPayService.html" class="focus">
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_3_img.png" alt="월세 결제" style="width:30px;">
+                        </div>
+                        <span>월세/결제</span>
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPay")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_4_img.png" alt="배달비 충전" style="width:30px;">
+                        </div>
+                        <span>배달비충전</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 금액 설정 함수
+        function setAmount(amount) {
+            const input = document.getElementById('paymentAmount');
+            input.value = amount.toLocaleString();
+            updateSummary();
+        }
+
+        // 요약 정보 업데이트
+        function updateSummary() {
+            const input = document.getElementById('paymentAmount');
+            const amount = parseInt(input.value.replace(/,/g, '')) || 0;
+            
+            document.getElementById('summaryAmount').textContent = amount.toLocaleString() + '원';
+            document.getElementById('totalAmount').textContent = amount.toLocaleString() + '원';
+        }
+
+        // 결제 처리
+        function processPayment() {
+            const amount = document.getElementById('paymentAmount').value;
+            const selectedCard = document.querySelector('input[name="card"]:checked');
+            
+            if (!amount || amount === '0') {
+                alert('결제 금액을 입력해주세요.');
+                return;
+            }
+            
+            if (!selectedCard) {
+                alert('결제할 카드를 선택해주세요.');
+                return;
+            }
+            
+            if (confirm(`${amount}원을 결제하시겠습니까?`)) {
+                alert('결제가 완료되었습니다.');
+                // 실제 구현 시 결제 API 호출
+            }
+        }
+
+        // 금액 입력 시 실시간 업데이트
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('paymentAmount');
+            input.addEventListener('input', function() {
+                // 숫자만 입력 허용
+                this.value = this.value.replace(/[^0-9]/g, '');
+                // 천단위 콤마 추가
+                if (this.value) {
+                    this.value = parseInt(this.value).toLocaleString();
+                }
+                updateSummary();
+            });
+        });
+
+        // 모바일 터치 효과
+        document.querySelectorAll(".menu li").forEach(function (item) {
+            item.addEventListener("touchstart", function () {
+                this.querySelector("a").classList.add("active");
+            });
+
+            item.addEventListener("touchend", function () {
+                setTimeout(() => {
+                    this.querySelector("a").classList.remove("active");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

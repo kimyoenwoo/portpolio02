@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>배달비 충전 - 푸드샵인샵 모바일</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/userPay.css">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    
+    <script src="../js/user/jquery-1.10.2.js"></script>
+    <script src="../js/user/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="../js/user/jquery.form.js"></script>
+    <script src="../js/user/jquery.class.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="../js/common/formdata.js"></script>
+
+    <script>
+        function Link(jsp, query, param, otherParams) {
+            console.log('Navigation to:', jsp);
+            const pageMap = {
+                "frnOwner/storepayM/user/Main": "../index.html",
+                "frnOwner/storepayM/user/userAcc": "userAcc.html",
+                "frnOwner/storepayM/user/userPayService": "userPayService.html",
+                "frnOwner/storepayM/user/userInfo": "userInfo.html",
+                "frnOwner/storepayM/user/Notice": "Notice.html"
+            };
+            
+            if (pageMap[jsp]) {
+                window.location.href = pageMap[jsp];
+            } else {
+                alert('페이지 준비 중입니다: ' + jsp);
+            }
+        }
+
+        function init() {
+            console.log('initFunction');
+            setData();
+            initEvent();
+        }
+
+        function setData() {
+            // 초기 데이터 Setting
+        }
+
+        function initEvent() {
+            // Event Handling
+        }
+
+        function showTab(tabId, buttonId) {
+            // 모든 탭 콘텐츠 숨기기
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // 선택한 탭 콘텐츠 표시
+            document.getElementById(tabId).classList.add('active');
+
+            // 모든 버튼에서 'on' 클래스 제거
+            document.querySelectorAll('.tab-buttons button').forEach(button => {
+                button.classList.remove('on');
+            });
+
+            // 현재 선택된 버튼에 'on' 클래스 추가
+            document.getElementById(buttonId).classList.add('on');
+        }
+
+        // 숫자를 한글로 변환하는 함수
+        function numberToKorean(num) {
+            const units = ['', '십', '백', '천', '만', '십만', '백만', '천만', '억'];
+            const numbers = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+            
+            if (num === 0) return '영';
+            
+            let result = '';
+            let unitIndex = 0;
+            
+            while (num > 0) {
+                const digit = num % 10;
+                if (digit !== 0) {
+                    result = numbers[digit] + units[unitIndex] + result;
+                }
+                num = Math.floor(num / 10);
+                unitIndex++;
+            }
+            
+            return result;
+        }
+
+        // 입력값 포맷팅 및 한글 변환
+        function formatAmount(inputId, koreanSpanClass) {
+            const input = document.getElementById(inputId);
+            const value = input.value.replace(/[^0-9]/g, '');
+            
+            if (value) {
+                const formattedValue = parseInt(value).toLocaleString();
+                input.value = formattedValue;
+                
+                const koreanSpan = input.closest('.amount_input').querySelector(koreanSpanClass);
+                if (koreanSpan) {
+                    koreanSpan.textContent = numberToKorean(parseInt(value));
+                }
+            }
+        }
+
+        // 결제 처리
+        function processPayment() {
+            const activeTab = document.querySelector('.tab-content.active');
+            const cardSelect = activeTab.querySelector('select');
+            const installSelect = activeTab.querySelector('#selectInstall');
+            
+            if (!cardSelect.value) {
+                alert('결제 카드를 선택해주세요.');
+                return;
+            }
+            
+            const amount = activeTab.querySelector('input[type="text"]').value;
+            if (!amount) {
+                alert('금액을 입력해주세요.');
+                return;
+            }
+            
+            if (confirm(`${amount}원을 결제하시겠습니까?`)) {
+                alert('결제가 완료되었습니다.');
+                // 실제 구현 시 결제 API 호출
+            }
+        }
+
+        // 페이지 로드 시 첫 번째 탭과 버튼을 초기 활성화
+        document.addEventListener('DOMContentLoaded', () => {
+            showTab('sendAmountTab', 'tab1');
+            
+            // 입력 필드 이벤트 리스너 추가
+            document.getElementById('sendAmount').addEventListener('input', function() {
+                formatAmount('sendAmount', '.ko_txt');
+            });
+            
+            document.getElementById('receiveAmount').addEventListener('input', function() {
+                formatAmount('receiveAmount', '.ko_txt');
+            });
+            
+            document.getElementById('sendAmountAlt').addEventListener('input', function() {
+                formatAmount('sendAmountAlt', '.ko_txt');
+            });
+            
+            document.getElementById('receiveAmountAlt').addEventListener('input', function() {
+                formatAmount('receiveAmountAlt', '.ko_txt');
+            });
+        });
+    </script>
+</head>
+<body class="bg" onload="init();">
+    <!-- Header -->
+    <div id="header" class="sub fixed-header">
+        <div class="header_wrap">
+            <div class="header-left">
+                <a href="../index.html" class="icon xl back">뒤로가기</a>
+                <h1>배달비 충전</h1>
+            </div>
+            <div class="header-right">
+                <div class="user_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userInfo")'>
+                        <p class="user_icon"></p>
+                    </a>
+                </div>
+                <div class="notify_iconbox">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_off_icon"></p></a>
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/Notice")'><p class="notify_icon"></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">    
+        <div class="payMent">
+            <div class="detail_top">
+                <div class="detail_title">
+                    <h3>입금 받는분</h3>
+                </div>
+            </div>
+            <div class="detail_infor">
+                <div class="payment_wrap">
+                    <div class="payment_cont">
+                        <div class="payment_right">
+                            <h1 class="payment_Name">우리동네 배달맨</h1>
+                            <p class="pay_Acc">신한은행<br><span>1222-1222225-4587</span></p>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            <div class="payect">
+                <p>ㆍ입금 받는분 계좌 번호를 한 번 더 확인해 주세요.</p>
+            </div>
+        </div>
+        
+        <div class="tab_container">
+            <div class="tab-buttons">
+                <button id="tab1" onclick="showTab('sendAmountTab', 'tab1')">송금액 기준</button>
+                <button id="tab2" onclick="showTab('paymentAmountTab', 'tab2')">결제액 기준</button>
+            </div>
+
+            <!-- 송금액 기준 탭 내용 -->
+            <div id="sendAmountTab" class="tab-content active">
+                <div class="input-group amount_input">
+                    <div class="amount_input_top">
+                        <span class="ko_txt"></span>원
+                    </div>
+                    <div class="amount_input_bot">
+                        <label for="sendAmount">송금할 금액</label>
+                        <div class="input_wrap">
+                            <input type="text" id="sendAmount" placeholder="송금할 금액을 입력하세요" maxlength="15">    
+                            <span class="unit">원</span>      
+                        </div>      
+                    </div>
+                </div>
+                <div class="input-group amount_input pay_amount_input">
+                    <div class="amount_input_top">
+                        <span class="ko_txt"></span>원
+                    </div>
+                    <div class="amount_input_bot">
+                        <label for="receiveAmount">결제할 금액</label>
+                        <div class="input_wrap">
+                            <input type="text" id="receiveAmount" placeholder="결제할 금액을 입력하세요" maxlength="15">
+                            <span class="unit">원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_select">
+                    <div class="input-group paycard_select">
+                        <label for="selectCard">결제 카드 선택</label>
+                        <select id="selectCard">
+                            <option value="">카드를 선택하세요</option>
+                            <option value="shinhan">신한카드 **** 1234</option>
+                            <option value="kb">국민카드 **** 5678</option>
+                            <option value="samsung">삼성카드 **** 9012</option>
+                            <option value="hyundai">현대카드 **** 3456</option>
+                        </select>
+                    </div>
+                    <div class="input-group install_select">
+                        <label for="selectInstall">할부</label>
+                        <select id="selectInstall">
+                            <option value="full" selected>일시불</option>
+                            <option value="2">2개월</option>
+                            <option value="3">3개월</option>
+                            <option value="4">4개월</option>
+                            <option value="5">5개월</option>
+                            <option value="6">6개월</option>
+                            <option value="7">7개월</option>
+                            <option value="8">8개월</option>
+                            <option value="9">9개월</option>
+                            <option value="10">10개월</option>
+                            <option value="11">11개월</option>
+                            <option value="12">12개월</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group payBtn_wrap">
+                    <button type="submit" class="payBtn" id="payBtn" onclick="processPayment()">결제하기</button>
+                    <span>※ 결제 후 송금된 금액은 취소가 불가 합니다.</span>
+                </div>
+            </div>
+
+            <!-- 결제액 기준 탭 내용 -->
+            <div id="paymentAmountTab" class="tab-content">
+                <div class="input-group amount_input">
+                    <div class="amount_input_top">
+                        <span class="ko_txt"></span>원
+                    </div>
+                    <div class="amount_input_bot">
+                        <label for="sendAmountAlt">결제 금액</label>
+                        <div class="input_wrap">
+                            <input type="text" id="sendAmountAlt" placeholder="결제할 금액을 입력하세요" maxlength="15">
+                            <span class="unit">원</span>      
+                        </div>      
+                    </div>
+                </div>
+                <div class="input-group amount_input pay_amount_input">
+                    <div class="amount_input_top">
+                        <span class="ko_txt"></span>원
+                    </div>
+                    <div class="amount_input_bot">
+                        <label for="receiveAmountAlt">송금액</label>
+                        <div class="input_wrap">
+                            <input type="text" id="receiveAmountAlt" placeholder="송금할 금액을 입력하세요" maxlength="15">
+                            <span class="unit">원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_select">
+                    <div class="input-group paycard_select">
+                        <label for="selectCard2">결제 카드 선택</label>
+                        <select id="selectCard2">
+                            <option value="">카드를 선택하세요</option>
+                            <option value="shinhan">신한카드 **** 1234</option>
+                            <option value="kb">국민카드 **** 5678</option>
+                            <option value="samsung">삼성카드 **** 9012</option>
+                            <option value="hyundai">현대카드 **** 3456</option>
+                        </select>
+                    </div>
+                    <div class="input-group install_select">
+                        <label for="selectInstall2">할부</label>
+                        <select id="selectInstall2">
+                            <option value="full" selected>일시불</option>
+                            <option value="2">2개월</option>
+                            <option value="3">3개월</option>
+                            <option value="4">4개월</option>
+                            <option value="5">5개월</option>
+                            <option value="6">6개월</option>
+                            <option value="7">7개월</option>
+                            <option value="8">8개월</option>
+                            <option value="9">9개월</option>
+                            <option value="10">10개월</option>
+                            <option value="11">11개월</option>
+                            <option value="12">12개월</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group payBtn_wrap">
+                    <button type="submit" class="payBtn" onclick="processPayment()">결제하기</button>
+                    <span>※ 결제 후 송금된 금액은 취소가 불가 합니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="nav" class="fixed-nav nav">
+        <div class="nav_wrap">
+            <ul class="menu">
+                <li class="menu1">
+                    <a href="../index.html">
+                        <div class="img_wrap">
+                            <img class="img_gray" src="../images/common/menu_icon1.png" alt="홈" style="width:30px;">
+                        </div>
+                        <span>홈</span>
+                    </a>
+                </li>
+                <li class="menu2">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userAcc")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_1_img.png" alt="선정산 서비스" style="width:30px;">
+                        </div>
+                        <span>선정산</span>
+                    </a>
+                </li>
+                <li class="menu3">
+                    <a href="javascript:void(0);" onclick='Link("frnOwner/storepayM/user/userPayService")'>
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_3_img.png" alt="월세 결제" style="width:30px;">
+                        </div>
+                        <span>월세/결제</span>
+                    </a>
+                </li>
+                <li class="menu4">
+                    <a href="userPay.html" class="focus">
+                        <div class="img_wrap">
+                            <img src="../images/common/contents_4_img.png" alt="배달비 충전" style="width:30px;">
+                        </div>
+                        <span>배달비충전</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 모바일 터치 효과
+        document.querySelectorAll(".menu li").forEach(function (item) {
+            item.addEventListener("touchstart", function () {
+                this.querySelector("a").classList.add("active");
+            });
+
+            item.addEventListener("touchend", function () {
+                setTimeout(() => {
+                    this.querySelector("a").classList.remove("active");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html> 

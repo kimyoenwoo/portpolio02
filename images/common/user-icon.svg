@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88 88">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="88" height="88"/>
+    </clipPath>
+  </defs>
+  <g id="_레이어_1-2" data-name="레이어 1">
+    <g class="cls-3">
+      <g id="_482_Business_Distribute_Relationship_Share_Structure" data-name="482, Business, Distribute, Relationship, Share, Structure">
+        <path class="cls-2" d="M49.42,42.65c5.25-2.32,8.89-7.62,8.77-13.74-.15-7.92-6.65-14.34-14.57-14.41s-14.83,6.55-14.83,14.7c0,6,3.61,11.17,8.78,13.45-8.7,2.56-15.08,10.62-15.08,20.15v3.15c0,.58.47,1.05,1.05,1.05h39.9c.58,0,1.05-.47,1.05-1.05v-3.15c0-9.52-6.37-17.58-15.08-20.15ZM30.91,29.24c0-6.95,5.65-12.6,12.6-12.6s12.6,5.65,12.6,12.6-5.65,12.6-12.6,12.6-12.6-5.65-12.6-12.6h0ZM62.4,64.9H24.6v-1.94c0-10.21,8.35-18.87,18.55-19.06s19.25,8.36,19.25,18.9v2.1Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
