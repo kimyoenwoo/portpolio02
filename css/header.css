@@ -1,0 +1,96 @@
+#header.sub{
+	border:none;
+	background:#4371ea;
+	height:60px;
+}
+#header.sub .header-right{
+	display: flex;
+}
+.header_wrap{
+	width:100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 5%;
+}
+
+.top-header{
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+.top-header div.header-left{
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+
+.top-header div.header-right{
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+	gap: 10px;
+}
+
+.top-header div.header-right div{
+	width:30px;
+	height:30px;
+}
+
+#header.sub h1{
+	margin-left:30px;
+	color:#fff;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.user_iconbox{
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+}
+
+.user_iconbox p{
+	width:30px;
+	height:30px;
+	background:url("../images/common/user-icon.svg")no-repeat;
+	background-size:cover;
+	background-position:center;
+	cursor:pointer;
+}
+
+.notify_iconbox{
+	position: relative;
+}
+
+.notify_iconbox p{
+	width:30px;
+	height:30px;
+	cursor:pointer;
+}
+
+.notify_iconbox p.notify_icon{
+ 	background:url("../images/common/notify-on.svg")no-repeat;
+ 	background-size:cover;
+	background-position:center;	
+	display:none;
+}
+
+.notify_iconbox p.notify_off_icon{
+ 	background:url("../images/common/notify-off.svg")no-repeat;
+ 	background-size:cover;
+	background-position:center;	
+}
+
+.icon.xl.back{
+	background:url("../images/common/ico-back-w.png") 50% 50% no-repeat;
+	background-size:auto 15px;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;
+}

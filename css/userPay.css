@@ -1,0 +1,553 @@
+
+	.payMent{
+		box-sizing:border-box;
+		width:90%;
+		margin:0 auto;
+		padding:10px 0;
+		background:#fff;
+		border-radius:15px;
+		box-sizing:border-box;
+		padding:20px;
+		border: 1px solid #e8edf3;
+		margin-top:20px;
+	}
+	
+	.detail_title h3{
+		font-size:18px;
+		font-weight:800;
+	}
+	
+	.detail_top{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+		box-sizing:border-box;
+		padding-bottom: 10px;
+    	border-bottom: 1px solid #e8edf3;
+	}
+	
+	
+	.detail_infor{
+		box-sizing:border-box;
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+	}
+	.payment_wrap{
+		width:100%;
+		overflow:hidden;
+	}
+	.payment_img{
+		border-radius:50%;
+		box-sizing:border-box;
+		width:100px;
+		height:100px;
+		background:#e8eaef;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	
+	.payment_img img{
+		width:60%;
+	}
+	.payment_right{
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+	}
+	
+	.payect{
+	margin-top:20px;
+	color:red;
+	}
+	
+	.payment_cont{
+
+	}
+	h1.payment_Name{
+		font-weight:900;
+		font-size:17px;
+		font-weight:900;
+		font-size:17px;
+	  	overflow-wrap: break-word;
+	  	width:45%;
+
+	}
+	
+	p.pay_Acc{
+		line-height:1.5;
+		font-size:14px;
+		color:#000000a1;
+		text-align:right;
+		font-weight:600;
+	}
+	
+	p.pay_fee{
+		text-align:center;
+		padding:8px 0;
+		background:#dde0e7;
+		font-size:12px;
+		color:Gray;
+	}
+	p.pay_btn{
+		padding:10px 20px;
+		background:red;
+		border-radius:4px;
+		font-size:14px;
+		background:linear-gradient(0deg, #147ba9, #49bdf1);
+		margin:5px 0;
+		box-shadow:2px 2px 5px #0000003b;
+		color:#fff;
+	}
+	
+	.payment_fee{
+		text-align:center;
+		padding:8px 0;
+		background:#e8eaef;
+		font-size:12px;
+		color:gray;
+	}
+	
+	.payment_wrap{
+	
+	}
+
+    /* 전체 레이아웃 */
+    .tab_container {
+       width:90%;
+        margin: 0 auto;
+        background: #fff;
+	    border-radius: 15px;
+	    box-sizing: border-box;
+	    padding: 20px;
+	    margin-top: 10px;
+	    border:1px solid #e8edf3;
+
+    }
+
+    /* 탭 스타일 */
+    .tab-buttons {
+        display: flex;
+        align-items:center;
+        margin:0 auto;
+        margin-bottom: 20px;
+        background:#4285f4;
+        width:80%;
+        border-radius:40px;
+    }
+    .tab-buttons button {
+        padding: 13px 20px;
+        cursor: pointer;
+        background-color: transparent;
+        border-radius: 40px;
+        color:#fff;
+        width:50%;
+        font-weight: 600;
+        font-size:13px;
+    }
+    
+    .tab-buttons button.on {
+        background-color: #fff;
+        color: #4285f4;
+        border:2px solid #4285f4;
+   }
+
+
+    /* 탭 내용 스타일 */
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .input-group {
+        margin-bottom: 25px;
+    }
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size:16px;
+    }
+    .input-group input {
+      background:#fff;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      text-align:right;
+      font-size:18px;
+    }
+    
+	 .input-group input::placeholder {
+	    text-align: center;
+	    color: gray; /* 예시로 색상 추가 */
+	    font-size:15px !important;
+	    
+	  }
+	    
+	.input-group select {
+	    padding: 12px 6px;
+	    border: 1px solid #ddd;
+	    border-radius: 5px;
+	    font-size: 16px;
+	    color: #333;
+	    background-color: #e8eaef;
+	    transition: all 0.3s ease;
+	    width:100%;
+	    appearance: auto;
+	}
+	.input-group input:focus {
+	    outline: none; /* Remove default focus outline */
+	}
+	
+	.pay_amount_input input:focus{
+		color:#007fdb;
+	}
+	.input-group select:focus {
+		box-shadow: 0 0 4px rgba(0, 123, 255, 0.3); /* Softer blue shadow */
+	    background-color: #f1faff; /* Lighter blue background */
+	    outline: none; /* Remove default focus outline */
+	}
+	
+	
+	
+	.input-group select option {
+	    padding: 8px;
+	}
+	
+	.card_select{
+		display:flex;
+		align-items:center;
+		gap:10px;
+		margin-top:30px;
+	}
+	.paycard_select{
+		width:60%;
+	}
+	.install_select{
+		width:40%;
+	}
+	.payBtn_wrap{
+		display:flex;
+		justify-content:center;
+		flex-direction:column;
+		align-items:center;
+	}
+	
+	.payBtn_wrap span{
+		padding:10px 0;
+		color:#ff0000;
+		font-weight:600;
+	}
+	 button.payBtn{
+		padding:15px 30px;
+		border-radius:4px;
+		font-size:17px;
+		background:linear-gradient(0deg, #83a53b, #b7dd6a);
+		margin:5px 0;
+		box-shadow:2px 2px 5px #0000003b;
+		color:#fff;
+		font-weight:500;
+		
+	}
+
+	/* 비활성화된 입력 필드 스타일 */
+	input[disabled] {
+	  background-color: #f8f9fa; /* 연한 회색 배경색 */
+	  color: #6c757d; /* 텍스트 색상도 연하게 */
+	  border: 1px solid #ced4da; /* 테두리를 부드럽게 */
+	  cursor: not-allowed; /* 사용 불가능한 마우스 커서 */
+	  opacity: 0.7; /* 약간 투명하게 */
+	}
+	
+	/* 추가: 비활성화된 입력 필드의 플레이스홀더 스타일 */
+	input[disabled]::placeholder {
+	  color: #adb5bd; /* 플레이스홀더 색상도 연하게 */
+	}
+	
+
+	
+	.amount_input{
+	display: flex;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    flex-direction: column;
+    margin-bottom:15px;
+	}
+	
+	.amount_input label{
+	font-weight:500;
+	}
+	.amount_input input{
+	 background:transparent;
+	 padding:0;
+	 border:unset;
+	 padding-right:20px;
+	 text-align:right !important;
+	}
+	.amount_input label{
+	 margin:0;
+	
+	}
+	
+	.amount_input_top{
+	text-align:right;
+	display: flex;
+    justify-content: flex-end;
+    width:100%;
+    margin-bottom: 2px;
+    position:relative;
+    font-size:14px;
+
+	}
+	.input_wrap {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+	}
+	#receiveAmount,#sendAmount{
+	width: 100%;
+	padding-right: 20px; /* '원' 표시 공간 확보 */
+	box-sizing: border-box;
+	}
+		
+	.amount_input_top span.ko_txt{
+	margin-right:5px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width:-webkit-fill-available;
+    margin-right:5px;
+	}
+	
+	.amount_input_bot{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding:5px 0;
+    transition:all 0.5s;
+	}
+	
+	.unit {
+	position: absolute;
+    right: 0;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #000;
+    pointer-events: none;
+    transition:all 0.5s;
+	}
+	/* .active 클래스가 추가되면 ko_txt 색상을 파란색으로 변경 */
+	.pay_amount_input{
+    transition:all 0.5s;
+	}
+	.pay_amount_input.active input{
+	color: #0171c0;	
+	}
+	.pay_amount_input.active .amount_input_top {
+	color: #0171c0;
+	transition:all 0.5s;
+	}
+	.pay_amount_input.active{
+	border-bottom:1px solid #0070c1;
+	}
+	.pay_amount_input.active span.unit {
+	color: #0171c0 !important;
+	}
+
+	/* 로딩 화면 */
+	.loading-screen {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-color: rgba(0, 0, 0, 0.5);
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    z-index: 1500;
+	    color: white;
+	    flex-direction: column;
+	    font-size: 18px;
+	}
+	.loading-screen p{
+		margin-top:10px;
+	}
+	/* 로더 애니메이션 */
+	.loader {
+	    border: 8px solid #f3f3f3;
+	    border-top: 8px solid #3498db;
+	    border-radius: 50%;
+	    width: 60px;
+	    height: 60px;
+	    animation: spin 1s linear infinite;
+	}
+	
+	/* 회전 애니메이션 */
+	@keyframes spin {
+	    0% {
+	        transform: rotate(0deg);
+	    }
+	    100% {
+	        transform: rotate(360deg);
+	    }
+	}
+	
+	
+	/* modal */
+	
+	  .modal-overlay {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* 모달창 스타일 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,.5);
+      border-radius: 5px;
+      width: 90%;
+      text-align: center;
+      overflow:hidden;
+    }
+    
+	.modal {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%) translateY(-50px); /* 처음에는 위로 이동 */
+	  opacity: 0; /* 처음에는 투명 */
+	  transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* 부드러운 애니메이션 */
+	  background: white;
+	  border-radius: 10px;
+	  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	  display: none; /* 처음에는 숨김 */
+	}
+	
+	.modal.show {
+	  transform: translate(-50%, -50%) translateY(0); /* 원래 위치로 이동 */
+	  opacity: 1;
+	  display: block;
+	}
+    .modal button {
+      margin: 5px;
+    }
+    
+    .modal_top {
+    display: flex;             
+    align-items: center;         
+    justify-content: space-between;
+    padding:10px;
+    background:linear-gradient(0deg, #83a53b, #b7dd6a);
+
+	}
+
+    .modal_top h2{
+	font-size: 1.4em;         
+	margin: 0;         
+	color: #fff;  
+	font-weight:700;
+    }	
+	.close_button {
+	font-size: 1.5em;          
+	cursor: pointer;  
+	color: #555;       
+	}
+
+	.modal_content {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing:border-box;
+	padding:20px 10px;
+	}
+
+	
+	.modal .confirm_title{
+	font-size:23px;
+	font-weight:800;
+	color:#0067e3;
+	margin:10px 0;
+	}
+	.modal .confirm_top .confirm_amount{
+	font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	}	
+	.modal .confirm_top .confirm_amount span{
+	font-size: 23px;
+    font-weight: 800;
+    color: #0067e3;
+    margin: 0 5px;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    display: inline-block; 
+	}
+	
+	.modal .confirm_bot .confirm_amount{
+	font-size:18px;
+	margin:10px 0;
+	line-height:1.5;
+	}	
+	.modal .confirm_bot .confirm_amount .confirm_amount_txt{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.modal .confirm_bot .confirm_amount span{
+	font-size:21px;
+	font-weight:800;
+	color:#0067e3;	
+	margin:0 5px;
+	max-width: 70%;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    display: inline-block; 
+	}
+	.modal .cofirm_btn_wrap{
+	margin-top:10px;
+	}
+	#confirmBtn{
+	padding: 10px 30px;
+    background: linear-gradient(0deg, #5f4381, #9767d1);
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #fff;
+	}
+	
+	#cancelBtn{
+	padding: 10px 30px;
+    background: linear-gradient(0deg, #288ba4, #40c4e7);
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #fff;	
+	
+	}

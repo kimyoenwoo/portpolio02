@@ -1,0 +1,161 @@
+#section {
+  width: 100%;
+  padding: 20px;
+
+}
+.help_wrap{
+	box-sizing:border-box;
+	width:90%;
+	margin:0 auto;
+	padding-top:10px;
+}
+/* 그룹 설정 */
+.input-group {
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* 라벨 스타일 */
+.input-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  text-align:left;
+}
+
+/* 입력 필드와 버튼을 나란히 배치 */
+.input-row {
+  display: flex;
+  align-items: center;
+  width:100%;
+  gap:10px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background:#fff;
+}
+
+#business-number{
+	width:80%;
+}
+
+#verification-code{
+	width:60%;
+}
+/* 버튼 스타일 */
+.send-button,
+.verify-button,
+.resend-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  box-sizing:border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.send-button{
+
+}
+.resend-button{
+  display:none;
+}
+.verify-button{
+	background:#fff;
+
+	border:1px solid #007bff;
+	color:#007bff;;
+}
+.verify-button:hover{
+	background:#eff8ff;
+}
+.send-button:hover,
+
+.resend-button:hover {
+  background-color: #0056b3;
+}
+
+.verify_time ,.verify_pass{
+	color:red;
+	margin:5px;
+
+}
+
+.verify_time{
+
+}
+/* 안내문 스타일 */
+.notice-text {
+  font-size: 12px;
+  color: #555;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.customer-id {
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.customer-id-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.customer-id-text .highlight {
+  font-weight: bold;
+  color: #333;
+}
+
+.login-move-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background:linear-gradient(0deg, #2d5f9c, #4591ed);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin:10px 0;
+}
+
+.login-move-button:hover {
+  background-color: #0056b3;
+}
+
+.customer-pwd {
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.customer-pwd-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.change-password-button{
+  padding: 10px 20px;
+  font-size: 14px;
+  background:linear-gradient(0deg, #2d5f9c, #4591ed);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin:10px 0;
+	
+}

@@ -1,0 +1,79 @@
+
+
+#header.sub{
+	border:none;
+	background:#4d4d4d;
+	height:60px;
+
+}
+.top-header{
+	position:relative;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+.top-header div.header-left{
+	width:50%;
+	position:absolute;
+	bottom:20px;
+	left:0;
+}
+.top-header div.header-right{
+	width:50%;
+	position:absolute;
+	bottom:15px;
+	right:10px;
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;	
+}
+
+.top-header div.header-right div{
+	width:30px;
+	height:30px;
+}
+#header.sub h1{
+	margin-left:40px;
+	color:#fff;
+
+}
+.user_iconbox{
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+}
+.user_iconbox p{
+	width:30px;
+	height:30px;
+	background:url("../images/common/user-icon.svg")no-repeat;
+	background-size:cover;
+	background-position:center;
+	cursor:pointer;
+}
+
+.notify_iconbox p{
+	width:30px;
+	height:30px;
+	position:absolute;
+	cursor:pointer;
+}
+
+.notify_iconbox p.notify_icon{
+ 	background:url("../images/common/notify-on.svg")no-repeat;
+ 	background-size:cover;
+	background-position:center;	
+	display:none;
+}
+
+
+.notify_iconbox p.notify_off_icon{
+ 	background:url("../images/common/notify-off.svg")no-repeat;
+ 	background-size:cover;
+	background-position:center;	
+
+ }
+.icon.xl.back{
+	background:url("../images/common/ico-back-w.png") 50% 50% no-repeat;
+	background-size:auto 15px;
+}

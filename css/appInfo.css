@@ -1,0 +1,97 @@
+/* 전체 레이아웃 */
+.appInfo {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+	background:#fff;
+	border-radius:15px;
+	box-sizing:border-box;
+	padding:20px;
+	border: 1px solid #e8edf3;
+	margin-top:20px;
+}
+
+.detail_top {
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.detail_top  p{
+	font-size:14px;
+}
+.section {
+    margin-bottom: 15px;
+}
+
+.section_title {
+    background-color: #f5f5f5;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:15px;
+}
+.section_title span{
+	font-weight:600;
+	color:#0000007d;
+	
+}
+.section_title i{
+	color:#4371ea;
+}
+.section_title:hover {
+    background-color: #eaeaea;
+}
+.section_content{
+	box-sizing:border-box;
+	padding:10px;
+
+}
+
+.section_content p{
+	line-height:1.2;
+	font-size:14px;
+}
+.company_info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+}
+
+.company_info p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.company_name {
+    font-weight: 800;
+    font-size: 18px;
+    color: #1a73e8;
+}
+
+.company_address {
+    font-size: 14px;
+    color: #555;
+}
+
+.company_business {
+    font-size: 14px;
+    color: #888;
+}
+
+.company_contact {
+     font-size: 14px;
+    font-weight: bold;
+    color: #2196f3;
+}
+
+.company_info p:not(:last-child) {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+}

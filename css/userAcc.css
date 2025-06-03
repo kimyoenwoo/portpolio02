@@ -1,0 +1,546 @@
+.tabMenu{
+	min-height:40px;
+	background:#4371ea;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+
+}
+
+.tabMenu_wrap{
+	width:40%;
+	background:red;
+	min-height:35px;
+	border-radius:40px;
+	background:#ffffff4f;
+	display:flex;
+	align-items:center;
+}
+
+.tabMenu_wrap button{
+	width:50%;
+	text-align:center;
+	color:#fff;
+	box-sizing:border-box;
+	padding:8px;
+	margin:2px 3px; 
+	border-radius:40px;
+	font-size:15px;
+	font-weight:600;
+}
+
+.tabMenu_wrap button.active{
+	color:#4371ea;
+	background:#fff;
+	font-weight:600;
+}
+
+.tabcontent{
+
+}
+
+.tabDay,.tabMonth{
+	background:#4371ea;
+	min-height:30px;
+	color:#fff;
+	font-size:15px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:10px 0;
+	font-weight:600;
+}
+
+.tabDay button,.tabMonth button{
+	color:#fff;
+}
+
+.tabDay button.prevBtn,.tabMonth button.prevBtn{
+
+}
+
+.tabDay button.nextBtn,.tabMonth button.nextBtn{
+
+}
+
+/* 날짜선택 */
+
+.date_select, .month_select{
+    position: relative;
+    display: flex;
+    align-items:center;
+    width:50%;
+}
+
+.date_select input, .month_select input{
+	font-size:14px;
+	font-weight:600;
+	color:#fff;
+	text-align:center;
+  	appearance: none;
+  	-webkit-appearance: none; 
+  	-moz-appearance: none;  
+  	-ms-appearance: none; 
+  	border: none;       
+	margin: 0;  
+	background: url("../images/common/icon_date.png")no-repeat;
+	background-size:15px 15px;
+	background-position:right;
+	width:80%;
+	margin:0 auto;
+}
+
+
+.date_select input[type="date"]::-webkit-calendar-picker-indicator,
+.date_select input[type="date"]::-webkit-inner-spin-button,
+.date_select input[type="month"]::-webkit-calendar-picker-indicator,
+.date_select input[type="month"]::-webkit-inner-spin-button,
+.month_select input[type="date"]::-webkit-calendar-picker-indicator,
+.month_select input[type="date"]::-webkit-inner-spin-button,
+.month_select input[type="month"]::-webkit-calendar-picker-indicator,
+.month_select input[type="month"]::-webkit-inner-spin-button{
+	opacity: 0;
+	appearance: none; 
+	}
+.dailyAmount,.MonthAmount{
+	background:#3960c7;
+	box-sizing:border-box;
+	padding:10px 0;
+}
+.AmountWrap{
+	width:90%;
+	margin:0 auto;
+	color:#fff;
+}
+.totalAmount{
+	padding:10px 0;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.totalAmount h3,.subAmount h3{
+	font-size:1rem;
+	color:#ffffff;
+	width:25%;
+}
+
+.totalAmount p,.subAmount p{
+	font-size:15px;
+	text-align:right;
+	width:75%;
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+
+}
+.totalAmount p::after, .subAmount p::after {
+  content: " 원";
+}
+.totalAmount span{
+	font-weight:900;
+	letter-spacing:1.5px;
+	font-size:28px;
+	margin-right:5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	width:98%;
+	display:block;
+}
+
+.subAmount{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:10px 0;
+}
+
+.subAmount span{
+	font-size:20px;
+	font-weight:900;
+	letter-spacing:1.5px;
+	margin-right:5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	width:98%;
+	display:block;	
+}
+
+.detailAmount{
+	box-sizing:border-box;
+	width:90%;
+	margin:0 auto;
+	background:#fff;
+	border-radius:15px;
+	margin-top:20px;
+	padding:20px;
+	border:1px solid #e8edf3;
+}
+
+.monthDetail{
+	background:transparent;
+	padding:0;
+	box-shadow:unset;
+	border:none;
+}
+
+.monthDetail .chart_top{
+	padding:20px;
+	background:#fff;
+	border-radius:15px;
+	border:1px solid #e8edf3;
+}
+
+.monthDetail .chart_wrap{
+	box-sizing:border-box;
+	margin:5px auto;
+}
+.detail_top{
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-end;
+	border-bottom:1px solid #e8edf3;
+	height:35px;
+	width:100%;
+	padding-bottom:10px;
+}
+
+.detail_top_right{
+	display:flex;
+	align-items:Center;
+	font-weight:600;
+}
+
+.detail_top_right .approval{
+	margin-right:10px;
+	display:flex;
+	align-items:flex-end;
+}
+.detail_top_right .approval img,.detail_top_right .cancle img{
+	margin-right:5px;
+}
+.detail_top_right .cancle{
+	display:flex;
+	align-items:flex-end;
+}
+
+.detail_top_right div span{
+	margin:0 5px;
+	font-weight:900;
+}
+.detail_title{
+	box-sizing:border-box;
+}
+
+.detail_title h3{
+	font-size:18px;
+	font-weight:800;
+}
+
+.detail_infor{
+	box-sizing:border-box;
+	display:flex;
+	flex-direction:column;
+	gap:5px;
+	margin-top:5px;
+	padding: 0 5px;
+}
+
+.detail_infor_wrap{
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	box-sizing:border-box;
+}
+
+
+.detail_infor_top{
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	box-sizing:border-box;
+	padding:5px 0;
+	cursor:pointer;
+	height:25px;
+}
+.detail_infor_bot{
+	width:100%;	
+	display:none;
+	border-top:1px solid #e7e7e7;
+}
+.detail_check{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	box-sizing:border-box;
+	padding:8px 0;
+
+
+}
+.detail_check h4{
+	font-size:14px;
+	min-width:30%;
+	font-weight:600;
+}
+.detail_check span{
+	font-weight:800;
+	font-size:14px;
+}
+.detail_infor_left{
+	display:flex;
+	align-items:center;
+	min-width:35%;
+	flex-direction:row;
+}
+p.detail_addbtn{
+	font-size:11px;
+	margin-left:5px;
+	color:#000000;
+}
+.detail_infor_left .detail_infor_title{
+	font-weight:600;
+	font-size:14px;
+}
+
+.detail_infor_left .sub_infor span{
+	margin:0 2px;
+}
+.sub_infor {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 자식 요소를 중앙 정렬 */
+    gap: 5px; /* 숫자와 `/` 사이 간격 설정 */
+    min-width:25%;
+    font-weight:600;
+}
+
+.aprv_count,
+.cncl_count {
+    display: inline-block; /* 각 숫자를 개별적으로 스타일링 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 40px; /* 동일한 너비 설정 */
+    font-size: 14px; /* 폰트 크기 설정 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.aprv_count{
+	text-align:right;
+}
+
+.cncl_count{
+	text-align:left;
+}
+
+.detail_infor_amount{
+	display:flex;
+	justify-content:flex-end;
+}
+.detail_infor_amount span{
+	font-size:17px;
+	font-weight:900;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    text-align:right;
+    min-width:120px;
+    padding-right:1px;
+}
+
+.detail_total{
+	box-sizing:border-box;
+	text-align:right;
+	margin-top:10px;
+}
+
+.detail_total p{
+	font-size:14px;
+	font-weight:600;
+}
+
+.detail_total span{
+	font-size:20px;
+	font-weight:900;
+	margin-left:10px;
+	color:#4b8ddb;
+}
+
+.detail_infor_wrap {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.detail_infor_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.detail_infor_left {
+    flex: 1; /* 왼쪽 제목을 가장 왼쪽에 배치 */
+    display: flex;
+    align-items: center;
+}
+
+.detail_infor_title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.sub_infor {
+    flex: 1; /* 가운데에 배치 */
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    gap: 4px; /* 숫자와 슬래시 사이 간격 */
+}
+
+.aprv_count,
+.cncl_count {
+    width: 30px; /* 숫자 영역 고정 */
+}
+
+.slash {
+    flex-shrink: 0; /* 슬래시 영역은 크기 변경하지 않음 */
+}
+
+.detail_infor_amount {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    align-items: center;
+    min-width:40%;
+}
+
+.amount_number {
+    max-width: 120px; /* 최대 너비 설정 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트는 ...으로 표시 */
+    font-size: 16px;
+    font-weight: 700;
+    color: #4371ea;
+}
+.settleDetail{
+	margin-top:10px;
+}
+.settleDetail .detail_infor_top .detail_infor_left{
+	min-width:40%
+}
+
+.settleDetail .detail_infor_bot .detail_check h4{
+	min-width:40%
+}
+.chart_top{
+	display:flex;
+	justify-content:flex-start;
+	align-items:flex-start;
+	flex-direction:column;
+	
+}
+
+.detail_list_box{
+	box-sizing:border-box;
+	padding:20px;
+	background:#fff;
+	border-radius:20px;
+	border:1px solid #e8edf3;
+	margin-top:10px;
+}
+.detail_list{
+	display:flex;
+	flex-direction:column;
+	gap:15px;
+}
+.detail_list>li{
+	display:flex;
+	flex-direction:column;
+	box-sizing:border-box;
+
+}
+.detail_list>li.detail_today h3{
+	color:#189ffe;
+}
+.detail_list_top{
+	display:flex;
+	align-items:flex-end;
+	justify-content:space-between;
+	box-sizing:border-box;
+	background:trnasparent;
+}
+
+.detail_list_top h3{
+	font-size:17px;
+	font-weight:800;
+	color:#000;
+}
+.list_box{
+	box-sizing:border-box;
+	padding:0 5px;
+	margin-top:5px;
+}
+.list_box li{
+	display:flex;
+	align-items:Center;
+	justify-content:space-between;
+	box-sizing:border-box;
+	padding:5px 0;
+	font-size:13px;
+}
+
+.list_box li span{
+	margin-left:10px;
+	font-weight:900;
+	font-size:17px;
+	min-width:70%;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align:right;
+}
+
+.list_box li p.list_title{
+	font-size:14px;
+	min-width:20%;
+	font-weight:600;
+}
+p.detail_btn{
+	color: #000000ad;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* datepicker */
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,.flatpickr-current-month input.cur-year{
+	font-weight:600 !important
+}
+
+.flatpickr-monthSelect-month,.flatpickr-day{
+	font-weight:500 !important
+}
+
+/* chart CSS */
+.chart_wrap {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#myChart {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+}

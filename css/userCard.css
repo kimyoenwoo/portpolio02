@@ -1,0 +1,268 @@
+
+.MyCard_list{
+	box-sizing:border-box;
+	width:90%;
+	margin:0 auto;
+	background:#fff;
+	border-radius:15px;
+	box-sizing:border-box;
+	padding:20px;
+	border: 1px solid #e8edf3;
+	margin-top:20px;
+}
+.detail_top{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	box-sizing:border-box;
+
+}
+
+.detail_title h3{
+	font-size:18px;
+	font-weight:800;
+}
+
+
+.detail_infor{
+	box-sizing:border-box;
+	display:flex;
+	flex-direction:column;
+	padding:10px 0;
+}
+
+  .card_table_box {
+  background-color: #f8f9fa; 
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  margin-top:10px;
+}
+
+.card_table_box table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card_table_box thead {
+  background-color: #007bff; 
+  color: #fff; 
+}
+
+.card_table_box th, 
+.card_table_box td {
+  text-align: left;
+  border: 1px solid #dee2e6; 
+}
+.card_table_box td {
+	font-size:13px;
+	line-height:1.3;
+	font-weight:600;
+}
+.card_table_box th {
+  font-weight: 800;
+  text-transform: uppercase; 
+  font-size:14px;
+}
+
+.card_table_box tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row color */
+}
+
+.card_table_box tbody tr:hover {
+  background-color: #e9ecef; /* Light gray background on hover */
+  cursor: pointer; /* Optional: pointer cursor on hover */
+}
+    /* 반응형 스타일 */
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 0.8em;
+        padding: 8px;
+      }
+    }
+    
+     .input-container {
+      display: flex;
+      flex-direction:column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .input-container label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      font-size: 16px;
+      padding:5px 0;
+    }
+
+    .input-field {
+      flex: 1;
+      min-width: 180px;
+      padding:5px 0;
+
+    }
+    .input-field input{
+      background:#fff;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .card-number-container {
+      display: flex;
+      gap: 5px;
+    }
+
+    .card-number-container input {
+      width: 25%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+      background:#fff;
+    }
+	.card_check,.card_delet{
+		display:flex;
+		justify-content:Center;
+
+	}
+	.delet_wrap{
+		display:none;
+	}
+	
+	.modal .delet_wrap{
+		display:block;
+	}
+	.card_check_btn{
+	 padding:15px;
+	 background:linear-gradient(0deg, #147ba9, #49bdf1);
+	 border-radius:4px;
+	 color:#fff;
+	 font-size:14px;
+	 font-weight:600;
+	}
+	.card_delet_btn{
+	 padding:15px 20px;
+	 background:linear-gradient(0deg, #ab274b, #f36a8f);
+	 border-radius:4px;
+	 color:#fff;
+	 font-size:14px;
+	 font-weight:500;
+	 margin-top:20px;
+	}
+
+	p.check_ment{
+	 line-height:1.3;
+	 font-weight:500;
+	 color:#F44336;
+	 text-align:center;
+	 padding:10px 0;
+	 display:none;
+	}
+	
+	.input-wrap{
+	 box-sizing:border-box;
+	 display:flex;
+	 flex-direction:column;
+	 gap:20px;
+	}
+	
+	.card_name{
+	box-sizing:border-box;
+	padding:0 20px;
+	padding-top:0;
+	display:none;
+	}
+	.save_card{
+	display:flex;
+	justify-content:center;
+	display:none;
+	}
+	.save_card_btn{
+	 padding:15px;
+	 background:linear-gradient(0deg, #6a8928, #bbe16e);
+	 border-radius:4px;
+	 color:#fff;
+	 font-size:14px;
+	 font-weight:500;
+	}
+	
+	/*modal*/
+	.modal {
+	    display: none;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-color: rgba(0, 0, 0, 0.5);
+		z-index:100;
+	}
+	
+	.modal .input-container{
+		margin-top:0;
+	}
+
+		
+	.modal_content {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;   
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: left;
+   	height:80vh;
+   	overflow-y:auto;
+}
+	.modal_bot {
+    padding:0 20px;                
+    overflow-y:auto;
+    padding-top:10px;
+}
+
+	.delete-card-number-container{
+	display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-direction: row;	
+	}
+	.modal_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background: #fff;
+	}
+	.modal_bot_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+	.close_button {
+	    font-size: 1.5em;          
+	    cursor: pointer;  
+	    color: #555;       
+	}
+	/*반응형 스타일 */
+    @media (max-width: 600px) {
+      .input-container {
+        flex-direction: column;
+      }
+
+      th, td {
+        font-size: 0.8em;
+        padding: 8px;
+      }
+    }

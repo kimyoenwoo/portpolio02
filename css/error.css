@@ -1,0 +1,40 @@
+#section{
+
+}
+.error_page{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, 0%);
+	width:90%;
+}
+
+.error_message h2{
+	font-size:20px;
+	margin:10px 0;
+	font-weight:600;
+}
+
+.error_message h2 span{
+	color:#5287cc;
+}
+.error_message p{
+	color:#919191;
+	font-size:14px;
+	line-height:1.2;
+	text-align:center;
+}
+
+.contact_nm{
+	margin:10px 0;
+	font-size:16px;
+	text-align:center;
+	font-weight:600;
+	background:#ffbc47;
+	padding:5px 0;
+	color:#fff;
+}

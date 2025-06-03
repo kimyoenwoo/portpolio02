@@ -1,0 +1,359 @@
+/* 전체 레이아웃 */
+.userInfo {
+    border: 1px solid #ccc;
+    width: 90%;
+    margin:0 auto;
+    max-width: 600px;
+    background:#fff;
+	border-radius:15px;
+	margin-top:20px;
+	padding:20px;
+	border:1px solid #e8edf3;
+
+}
+
+/* 제목 스타일링 */
+.detail_top {
+    margin-bottom: 10px;
+}
+
+.detail_title h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #000;
+    border-bottom:1px solid #e8edf3;
+    padding-bottom: 10px;
+    font-weight:900;
+}
+
+/* 사용자 정보 스타일 */
+.detail_infor {
+    padding: 30px 0;
+    padding-top:0;
+}
+
+.user_details > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    
+}
+
+.user_details p {
+    font-size: 15px;
+    margin: 0;
+    color: #555;
+    min-width: 80px;
+    font-weight: 600;
+}
+
+.user_details span {
+    font-size: 14px;
+    color: #333;
+    word-wrap: break-word;
+    flex: 1;
+}
+
+.name_box, .id_box, .place_box, .business_Numb_box, .address_box, .represent_box, .represent_numb_box {
+    margin-bottom: 10px;
+}
+
+.id_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.id_wrap {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.btn_change_password {
+    font-size: 12px;
+    color: #fff;
+    background:linear-gradient(0deg, #2d5f9c, #4591ed);
+    border: none;
+    padding:10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.btn_change_password:hover {
+    background-color: #0056b3;
+}
+
+/* 유연한 레이아웃 설정 */
+.user_details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user_details div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height:1.3;
+}
+
+.user_details p {
+    flex: 0 0 120px;
+    white-space: nowrap;
+}
+
+.user_details span {
+    flex: 1;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 480px) {
+
+    .btn_change_password {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+}
+
+/* 서비스 버튼 스타일 */
+.service_buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn_service {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn_service:hover {
+    background-color: #0056b3;
+}
+
+/* 설명글 스타일 */
+.service_description p {
+    font-size: 15px;
+    color: #000;
+    line-height:1.3;
+    text-align:center;
+    flex:auto;
+    font-weight:600;
+}
+
+/* 상담 정보 스타일 */
+.service_contact p {
+    font-size: 15px;
+    color: #333;
+    margin: 5px 0;
+
+}
+
+.service_contact strong {
+    color: #007bff;
+    font-weight:900 !important;
+}
+
+.btn_kakao {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn_kakao:hover {
+    background-color: #e6b800;
+}
+.service_contact{
+	display:flex;
+	flex-direction:column;
+}
+.service_contact p{
+	flex:auto;
+}
+
+.btn_service, .btn_kakao{
+	font-size:14px;
+}
+/*modal*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+	z-index:2222;
+}
+.modal_top {
+    display: flex;             
+    align-items: center;         
+    justify-content: space-between;
+    padding:10px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.close_button {
+    font-size: 1.5em;          
+    cursor: pointer;  
+    color: #555;       
+}
+
+.modal_top h2 {
+    font-size: 1.2em;         
+    margin: 0;         
+    color: #333;          
+}
+.modal_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.close_button {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal_bot {
+    padding: 20px;               
+    background-color: #f9f9f9;     
+    border-top: 1px solid #ddd;    
+}
+
+.modal_bot_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.business_logo {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;     
+    border-radius: 50%;          
+    margin-right: 10px;          
+}
+
+.business_name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal_bot_cont {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;   
+    flex-direction:column;               
+}
+
+.modal_bot_left,
+.modal_bot_right {
+    width: 48%;            
+}
+
+.cont_list {
+    margin-bottom: 12px;        
+    font-size: 0.95em;
+    color: #555;
+}
+
+
+.cont_list p {
+    margin: 0;  
+    font-weight:500;
+    color: #000; 
+    font-size:15px;
+    padding:5px 0;
+ 
+}
+
+.service_contact{
+	display:flex !important;
+	flex-direction:column !important;
+	height:fit-content !important;
+}
+.cont_list span {
+    line-height:1.2;   
+    font-size:14px;      
+}
+
+/* 폼 스타일 */
+.form_group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form_group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form_group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* 버튼 스타일 */
+.btn_save_password {
+    margin-top: 20px;
+    padding: 20px 15px;
+    font-size: 16px;
+    color: #fff;
+    background:linear-gradient(0deg, #2d5f9c, #4591ed);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn_save_password:hover {
+    background-color: #218838;
+}
+
+/* 닫기 버튼 (X) */
+.modal_close_btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal_close_btn:hover {
+    color: #dc3545;
+}
